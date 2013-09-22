@@ -1,0 +1,8 @@
+/* Toolbar icon */
+#asciidoc-preview-icon {
+    background-image: url(asciidoc-sprite.svg);
+}
+
+#asciidoc-preview-icon.active {
+    background-position: 0 -24px !important;
+}
