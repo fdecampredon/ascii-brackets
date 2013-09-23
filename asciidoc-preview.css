@@ -1,6 +1,6 @@
 /* Toolbar icon */
 #asciidoc-preview-icon {
-    background-image: url(asciidoc-sprite.svg);
+    background-image: url(markdown-sprite.svg);
 }
 
 #asciidoc-preview-icon.active {

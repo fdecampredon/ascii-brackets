@@ -67,6 +67,12 @@ define(function (require, exports, module) {
 
             // Remove link hrefs
             bodyText = bodyText.replace(/href=\"([^\"]*)\"/g, "title=\"$1\"");
+            bodyText = bodyText.replace(/src=\"[^\"]*\"/g, function (match) {
+                return 'src="' + PathUtils.makePathAbsolute(
+                    match.substr(match.indexOf('"') + 1 , match.lastIndexOf('"')),
+                    doc.file.fullPath
+                ) + '"';
+            });
             var htmlSource = "<html><head>";
             htmlSource += "<link href='" + require.toUrl("./asciidoc.css") + "' rel='stylesheet'></link>";
             htmlSource += "<link href='" + require.toUrl("./pygment.css") + "' rel='stylesheet'></link>";
